@@ -42,7 +42,6 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
-    bio: DataTypes.TEXT,
     admin: DataTypes.BOOLEAN
   }, {
     hooks: {

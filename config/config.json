@@ -1,6 +1,6 @@
 {
   "development": {
-    "database": "auth-sei28",
+    "database": "digital-scrapbook",
     "host": "127.0.0.1",
     "dialect": "postgres",
     "operatorsAliases": "false"

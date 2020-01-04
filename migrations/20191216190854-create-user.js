@@ -30,9 +30,6 @@ module.exports = {
       photoUrl: {
         type: Sequelize.STRING
       },
-      bio: {
-        type: Sequelize.TEXT
-      },
       admin: {
         type: Sequelize.BOOLEAN,
         defaultValue: false
