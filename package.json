@@ -25,13 +25,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dschawel/express-auth.git"
+    "url": "git+https://github.com/dschawel/Digital-Scrapbook"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dschawel/express-auth/issues"
+    "url": "https://github.com/dschawel/Digital-Scrapbook"
   },
-  "homepage": "https://github.com/dschawel/express-auth#readme"
+  "homepage": "https://github.com/dschawel/Digital-Scrapbook#readme"
 }
