@@ -14,10 +14,25 @@ main {
 footer {
     width: 100vw;
     bottom: 0;
+    position: absolute;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
+/* #map {
+    display: flex;
+    position: absolute; 
+    top: 0; 
+    bottom: 0; 
+    width: 100%;
+} */
+/* .container {
+    height: 50vh;
+    width: 50vw;
+    align-items: center;
+    border: 5px solid black;
+} */
+
 #toast-container {
     left: 40% !important;
     right: auto !important;
