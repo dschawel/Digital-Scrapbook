@@ -4,6 +4,7 @@ let express = require('express')
 let flash = require('connect-flash')
 let layouts = require('express-ejs-layouts')
 let session = require('express-session')
+let methodOverride = require('method-override')
 
 // Declare express app variable
 let app = express()
