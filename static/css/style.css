@@ -11,6 +11,9 @@ body {
 main {
     text-align: center;
 }
+h1, h3 {
+    font-family: 'Permanent Marker', cursive;
+}
 footer {
     width: 100vw;
     bottom: 0;
@@ -32,7 +35,9 @@ footer {
     align-items: center;
     border: 5px solid black;
 } */
-
+#logo {
+    font-family: 'Permanent Marker', cursive;
+}
 #toast-container {
     left: 40% !important;
     right: auto !important;
