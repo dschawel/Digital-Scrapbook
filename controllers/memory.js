@@ -4,6 +4,9 @@ let isLoggedIn = require('../middleware/isLoggedIn')
 let mbxClient = require('@mapbox/mapbox-sdk')
 let mbxGeocode = require('@mapbox/mapbox-sdk/services/geocoding')
 
+const mb = mbxClient({ accessToken: 'pk.eyJ1IjoiZHNjaGF3ZWwiLCJhIjoiY2s0YWl3ankwMDRkaTNucnVqZGtvNWVrbCJ9._FgRj_tMA-T2lGsQq-nZRA'})
+const geocode = mbxGeocode(mb)
+
 // Route to view memories
 router.get('/', isLoggedIn, (req, res) => {
     db.place.findAll({
@@ -11,6 +14,10 @@ router.get('/', isLoggedIn, (req, res) => {
             userId: req.user.id
         }
     })
+    // geocode.forwardGeocode({
+    //     query: `${req.body.city},${req.body.state},${req.body.county}`
+    // })
+    // .send()
     .then(places => {
         res.render('memories/main', { places })
         console.log(places)
