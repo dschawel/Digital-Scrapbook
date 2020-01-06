@@ -11,6 +11,9 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
+      date: {
+        type: Sequelize.DATE
+      },
       city: {
         type: Sequelize.STRING
       },
