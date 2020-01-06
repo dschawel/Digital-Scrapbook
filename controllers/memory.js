@@ -22,12 +22,19 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     db.place.create({
         name: req.body.name,
+        date: req.body.date,
         city: req.body.city,
         state: req.body.state,
         country: req.body.country,
         description: req.body.description
     })
-    res.redirect('/memories/main', { place })
+    .then(place => {
+    res.redirect('memories/main')
+    })
+    .catch(err => {
+    console.log('error, err')
+    res.redirect('error')
+    })
 })
 
 module.exports = router 
