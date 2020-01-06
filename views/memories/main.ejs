@@ -1,11 +1,11 @@
 <h1>Your Memories</h1>
-<% places.forEach(p => { %>
+<% places.forEach(place => { %>
     <div>
-        <h2><% p.name %></h2>
-        <h3><% p.date %></h3>
-        <h3><% p.city %></h3>
-        <h3><% p.state %></h3>
-        <h3><% p.country %></h3>
-        <p><% p.description %></p>
+        <h2><%= place.name %></h2>
+        <h3><%= place.date %></h3>
+        <h3><%= place.city %></h3>
+        <h3><%= place.state %></h3>
+        <h3><%= place.country %></h3>
+        <p><%= place.description %></p>
     </div>
 <% }) %>
