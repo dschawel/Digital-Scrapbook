@@ -15,7 +15,7 @@ router.get('/', isLoggedIn, (req, res) => {
         }
     })
     // geocode.forwardGeocode({
-    //     query: `${req.body.city},${req.body.state},${req.body.county}`
+    //     g : `${req.body.city},${req.body.state},${req.body.country}`
     // })
     // .send()
     .then(places => {
@@ -38,7 +38,14 @@ router.get('/new', isLoggedIn, (req, res) => {
 
 // Route to view one memory
 router.get('/:id', isLoggedIn, (req, res) => {
-    res.send('memory by id')
+    db.place.findOne({
+        where: { 
+            id: req.params.id
+        }
+    })
+    .then((place) => {
+        res.render('memories/show', { place })
+    })
 })
 
 // Route to create and post a memory
