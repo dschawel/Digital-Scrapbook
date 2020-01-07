@@ -8,9 +8,10 @@
         <h3><%= place.country %></h3>
         <p><%= place.description %></p>
     </div>
-    <button id="upload_widget" class="cloudinary-button">Upload A Picture</button>
+    
     <div>
         <img class="responsive-img" alt="memory-image" id="memory-image" src="<%= place.imgUrl %>">
+        <button id="upload_widget" class="cloudinary-button">Upload A Picture</button>
     </div> 
 
     <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
@@ -21,9 +22,9 @@
             uploadPreset: 'et0rvort'}, (error, result) => { 
             if (!error && result && result.event === "success") { 
                 console.log('Done! Here is the image info: ', result.info); 
-                fetch('/memory', {
+                fetch('/memory/:id', {
                     method: 'PUT',
-                    body: JSON.stringify({ photoUrl: result.info.secure_url }),
+                    body: JSON.stringify({ imgUrl: result.info.secure_url }),
                     headers: { "Content-Type": "application/json; charset=utf-8"}
                 })
                 .then((response) => response.json())

@@ -65,13 +65,13 @@ router.put('/:id', isLoggedIn, (req, res) => {
         {imgUrl: req.body.imgUrl},
         {where: { id: req.user.id }}
     )
-    .then((image) => {
-        console.log(pictureUrl)
-        res.render('memories/show', { image })
+    .then(() => {
+        console.log('SUCCESS')
+        res.send({'message': 'success'})
     })
     .catch(err => {
-        console.log('error', err)
-        res.redirect('error')
+        console.log('Error', err)
+        res.send({'message': 'error'})
     })
 })
 

@@ -20,7 +20,6 @@ router.put('/', isLoggedIn, (req, res) => {
         console.log('Error', err)
         res.send({'message': 'error'})
     })
-    
 })
 
 router.get('/admin', isAdminLoggedIn, (req, res) => {
