@@ -36,11 +36,11 @@ module.exports = (sequelize, DataTypes) => {
     },
     photoUrl: {
       type: DataTypes.STRING,
-      validate: {
-        isUrl: {
-          msg: 'Aww sad, no picture? :('
-        }
-      }
+      // validate: {
+      //   isUrl: {
+      //     msg: 'Aww sad, no picture? :('
+      //   }
+      // }
     },
     admin: DataTypes.BOOLEAN
   }, {

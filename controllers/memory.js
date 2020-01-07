@@ -61,10 +61,10 @@ router.get('/:id', isLoggedIn, (req, res) => {
 })
 
 router.put('/:id', isLoggedIn, (req, res) => {
-    db.place.update({
-        pictureUrl: req.body.pictureUrl,
-        userId: req.body.userId
-    })
+    db.place.update(
+        {photoUrl: req.body.photoUrl},
+        {where: { id: req.user.id }}
+    )
     .then((image) => {
         console.log(pictureUrl)
         res.render('memories/show', { image })
