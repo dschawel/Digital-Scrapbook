@@ -8,7 +8,6 @@ router.get('/', isLoggedIn, (req, res) => {
 })
 
 router.put('/', isLoggedIn, (req, res) => {
-    console.log(req.body)
     db.user.update(
         {photoUrl: req.body.photoUrl},
         {where: { id: req.user.id }}

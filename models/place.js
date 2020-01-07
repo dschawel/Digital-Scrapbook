@@ -7,13 +7,13 @@ module.exports = (sequelize, DataTypes) => {
     city: DataTypes.STRING,
     state: DataTypes.STRING,
     country: DataTypes.STRING,
-    latitude: DataTypes.INTEGER,
+    latitute: DataTypes.INTEGER,
     longitude: DataTypes.INTEGER,
-    description: DataTypes.TEXT
+    description: DataTypes.TEXT,
+    imgUrl: DataTypes.STRING
   }, {});
   place.associate = function(models) {
     // associations can be defined here
-    models.place.belongsTo(models.user)
   };
   return place;
 };

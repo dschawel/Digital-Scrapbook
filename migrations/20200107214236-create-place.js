@@ -26,7 +26,7 @@ module.exports = {
       country: {
         type: Sequelize.STRING
       },
-      latitude: {
+      latitute: {
         type: Sequelize.INTEGER
       },
       longitude: {
@@ -34,6 +34,9 @@ module.exports = {
       },
       description: {
         type: Sequelize.TEXT
+      },
+      imgUrl: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

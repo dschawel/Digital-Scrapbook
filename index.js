@@ -17,6 +17,7 @@ app.set('view engine', 'ejs')
 app.use(layouts)
 app.use('/', express.static('static'))
 app.use(express.urlencoded({ extended: false }))
+// Needed this to parse json info
 app.use(express.json())
 app.use(session({
     secret: process.env.SESSION_SECRET,

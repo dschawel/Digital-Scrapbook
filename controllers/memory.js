@@ -32,6 +32,10 @@ router.get('/new', isLoggedIn, (req, res) => {
     .then(user => {
         res.render('memories/new', { user })
     })
+    .catch(err => {
+        console.log('error', err)
+        res.redirect('error')
+    })
 })
 
 // Route to view one memory
@@ -42,15 +46,35 @@ router.get('/:id', isLoggedIn, (req, res) => {
         }
     })
     .then((place) => {
-        // geocode.forwardGeocode({
-        // g : `${place}`
-        // })
-        // .send()
-        console.log(place)
+    //     // geocode.forwardGeocode({
+    //     // g : `${place}`
+    //     // })
+    //     // .send()
+    //     console.log(place)
         res.render('memories/show', { place })
-        JSON.stringify(place)
+    //     JSON.stringify(place)
+    })
+    .catch(err => {
+        console.log('error', err)
+        res.redirect('error')
     })
 })
+
+router.post('/:id', isLoggedIn, (req, res) => {
+    db.image.create({
+        pictureUrl: req.body.pictureUrl,
+        userId: req.body.userId
+    })
+    .then((image) => {
+        console.log(pictureUrl)
+        res.render('memories/show', { image })
+    })
+    .catch(err => {
+        console.log('error', err)
+        res.redirect('error')
+    })
+})
+
 
 // Route to create and post a memory
 router.post('/', isLoggedIn, (req, res) => {

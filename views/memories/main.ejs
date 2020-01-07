@@ -1,11 +1,26 @@
 <h1>Your Memories</h1>
-<% places.forEach(place => { %>
-    <div>
-        <h2><%= place.name %></h2>
-        <h3><%= place.date %></h3>
-        <h3><%= place.city %></h3>
-        <h3><%= place.state %></h3>
-        <h3><%= place.country %></h3>
-        <p><%= place.description %></p>
-    </div>
-<% }) %>
+
+<table class="table striped">
+    <thead>
+        <th>Name</th>
+        <th>place</th>
+        <th>City</th>
+        <th>State</th>
+        <th>country</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <% places.forEach(p => { %>
+            <tr>
+                <td><a href="/memory/<%=p.id %>"><%= p.name %></a></td>
+                <td><%= p.date %></td>
+                <td><%= p.city %></td>
+                <td><%= p.state %></td>
+                <td><%= p.country %></td>
+                <td><%= p.description%></td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>
+    
+
