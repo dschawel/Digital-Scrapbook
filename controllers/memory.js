@@ -62,7 +62,7 @@ router.get('/:id', isLoggedIn, (req, res) => {
 
 router.put('/:id', isLoggedIn, (req, res) => {
     db.place.update(
-        {photoUrl: req.body.photoUrl},
+        {imgUrl: req.body.imgUrl},
         {where: { id: req.user.id }}
     )
     .then((image) => {
