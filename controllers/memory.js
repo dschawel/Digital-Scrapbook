@@ -1,8 +1,11 @@
 let router = require('express').Router()
+let cloudinary = require('cloudinary')
 let db = require('../models')
 let isLoggedIn = require('../middleware/isLoggedIn')
 let mbxClient = require('@mapbox/mapbox-sdk')
 let mbxGeocode = require('@mapbox/mapbox-sdk/services/geocoding')
+let multer = require('multer')
+let upload = multer({ dest: './uploads/' })
 
 const mb = mbxClient({ accessToken: 'pk.eyJ1IjoiZHNjaGF3ZWwiLCJhIjoiY2s0YWl3ankwMDRkaTNucnVqZGtvNWVrbCJ9._FgRj_tMA-T2lGsQq-nZRA'})
 const geocode = mbxGeocode(mb)
@@ -14,13 +17,8 @@ router.get('/', isLoggedIn, (req, res) => {
             userId: req.user.id
         }
     })
-    // geocode.forwardGeocode({
-    //     g : `${req.body.city},${req.body.state},${req.body.country}`
-    // })
-    // .send()
     .then(places => {
         res.render('memories/main', { places })
-        console.log(places)
     })  
 })
 
@@ -44,7 +42,13 @@ router.get('/:id', isLoggedIn, (req, res) => {
         }
     })
     .then((place) => {
+        // geocode.forwardGeocode({
+        // g : `${place}`
+        // })
+        // .send()
+        console.log(place)
         res.render('memories/show', { place })
+        JSON.stringify(place)
     })
 })
 
