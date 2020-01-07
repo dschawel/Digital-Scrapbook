@@ -60,7 +60,7 @@ module.exports = (sequelize, DataTypes) => {
   user.associate = function(models) {
     // associations can be defined here
     models.user.hasMany(models.place)
-    models.user.hasMany(models.image)
+    
   };
 
   user.prototype.validPassword = function(typeInPassword) {

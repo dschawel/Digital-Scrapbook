@@ -60,8 +60,8 @@ router.get('/:id', isLoggedIn, (req, res) => {
     })
 })
 
-router.post('/:id', isLoggedIn, (req, res) => {
-    db.image.create({
+router.put('/:id', isLoggedIn, (req, res) => {
+    db.place.update({
         pictureUrl: req.body.pictureUrl,
         userId: req.body.userId
     })
