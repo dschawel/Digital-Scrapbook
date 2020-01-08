@@ -70,6 +70,7 @@ footer {
 }
 #logo {
     font-family: 'Permanent Marker', cursive, sans-serif;
+    padding-left: 10px;
 }
 #user-image {
     height: 300px;

@@ -51,19 +51,20 @@ router.get('/:id', isLoggedIn, (req, res) => {
     })
     .then((place) => {
         geocode.forwardGeocode({
+        // Taking city, state, country from table to query with mapbox
         query : `${place.city}, ${place.state}, ${place.country}`,
         types: ['place'],
         countries: ['us']
         })
         .send()
         .then(result => {
-            console.log(place.city, place.state, place.country)
-            console.log(result.body.features[0].center)
+            // console.log(place.city, place.state, place.country)
+            // console.log(result.body.features[0].center)
             let results = {
                 lat: result.body.features[0].center[1],
                 long: result.body.features[0].center[0]
             }
-            console.log(results)
+            // console.log(results)
             res.render('memories/show', { place, mapkey: process.env.MAPBOX_API, results })
         })
         .catch(err => {
