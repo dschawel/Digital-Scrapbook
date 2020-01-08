@@ -20,6 +20,10 @@ router.get('/', isLoggedIn, (req, res) => {
     .then(places => {
         res.render('memories/main', { places })
     })  
+    .catch(err => {
+        console.log('error', err)
+        res.redirect('error')
+    })
 })
 
 // Route to create a new memory
@@ -80,8 +84,8 @@ router.put('/:id', isLoggedIn, (req, res) => {
         res.send({'message': 'success'})
     })
     .catch(err => {
-        // console.log('Error', err)
-        res.send({'message': 'error'})
+        console.log('error', err)
+        res.redirect('error')
     })
 })
 

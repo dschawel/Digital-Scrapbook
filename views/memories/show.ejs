@@ -8,6 +8,7 @@
         <p id="state"><strong><%= place.state %></strong></p>
         <p id="country"><strong><%= place.country %></strong></p>
         <p><strong><%= place.description %></strong></p>
+        <!--Passing the lat and long coordinates to the front end.-->
         <p id="lat"><%= results.lat %></p>
         <p id="long"><%= results.long %></p>
     </div>
@@ -25,6 +26,7 @@
     </div>
 
     <script>
+        // Storing the lat and long coordinates so I can pass them into the map
         let lat = document.getElementById('lat').textContent
         let long = document.getElementById('long').textContent
         mapboxgl.accessToken = '<%= mapkey %>';
@@ -48,6 +50,7 @@
     <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
 
     <script type="text/javascript">
+    // This is the javascript for the cloudinary widget
         let pId = document.getElementById('place-id').textContent
         // console.log(pId);
         let myWidget = cloudinary.createUploadWidget({
