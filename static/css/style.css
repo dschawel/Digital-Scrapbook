@@ -30,20 +30,21 @@ footer {
     top: 0; 
     bottom: 0; 
     left: 22%;
-    height: 40vh;
-    width: 40vw;
+    height: 35vh;
+    width: 35vw;
 } 
 .map-container {
-    height: 40vh;
-    width: 40vw;
+    height: 35vh;
+    width: 35vw;
     border: 5px solid black;
 }
 #info {
-    display: block;
+    display: flex; 
     position: relative;
+    left: 7%;
     margin: 0px auto;
     width: 50%;
-    padding: 10px;
+    /* padding: 10px; */
     border: none;
     border-radius: 3px;
     font-size: 12px;
@@ -54,6 +55,11 @@ footer {
 #logo {
     font-family: 'Permanent Marker', cursive;
 }
+#user-image {
+    height: 250px;
+    width: 250px;
+    border: 5px solid black;
+}
 #memory-image {
     height: 250px;
     width: 250px;
@@ -63,4 +69,7 @@ footer {
     left: 40% !important;
     right: auto !important;
     bottom: auto !important;
+}
+#place-id {
+    display: none;
 }

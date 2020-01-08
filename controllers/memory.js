@@ -62,11 +62,9 @@ router.get('/:id', isLoggedIn, (req, res) => {
 
 // Route to add a picture to a memory and update the place table
 router.put('/:id', isLoggedIn, (req, res) => {
-    console.log(req.params, `This should be 6 or some shit like that`)
-    console.log(`inside the image put route, ${req.params.id}`)
     db.place.update(
         {imgUrl: req.body.imgUrl},
-        {where: { userId: req.user.id, id: req.params.id }}
+        {where: { id: req.params.id }}
     )
     .then(() => {
         console.log('SUCCESS')
