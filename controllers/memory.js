@@ -51,7 +51,7 @@ router.get('/:id', isLoggedIn, (req, res) => {
     //     // })
     //     // .send()
     //     console.log(place)
-        res.render('memories/show', { place })
+        res.render('memories/show', { place, mapkey: process.env.MAPBOX_API  })
     //     JSON.stringify(place)
     })
     .catch(err => {
@@ -61,9 +61,11 @@ router.get('/:id', isLoggedIn, (req, res) => {
 })
 
 router.put('/:id', isLoggedIn, (req, res) => {
+    console.log(req.params, `This should be 6 or some shit like that`)
+    console.log(`inside the image put route, ${req.params.id}`)
     db.place.update(
         {imgUrl: req.body.imgUrl},
-        {where: { id: req.user.id }}
+        {where: { userId: req.user.id, id: req.params.id }}
     )
     .then(() => {
         console.log('SUCCESS')

@@ -11,7 +11,7 @@ body {
 main {
     text-align: center;
 }
-h1, h3 {
+h1, h2, h3 {
     font-family: 'Permanent Marker', cursive;
 }
 footer {
@@ -28,18 +28,34 @@ footer {
     justify-content: center;
     top: 0; 
     bottom: 0; 
-    left: 14%;
-    height: 50vh;
-    width: 50vw;
+    left: 22%;
+    height: 40vh;
+    width: 40vw;
 } 
 .map-container {
-    height: 50vh;
-    width: 50vw;
+    height: 40vh;
+    width: 40vw;
     border: 5px solid black;
 }
-
+#info {
+    display: block;
+    position: relative;
+    margin: 0px auto;
+    width: 50%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #222;
+    background: #fff;
+}
 #logo {
     font-family: 'Permanent Marker', cursive;
+}
+#memory-image {
+    height: 250px;
+    width: 250px;
 }
 #toast-container {
     left: 40% !important;
