@@ -7,6 +7,7 @@ router.get('/', isLoggedIn, (req, res) => {
     res.render('profile/main')
 })
 
+// Route to get the photo the was uploaded on profile page and add it to the user table
 router.put('/', isLoggedIn, (req, res) => {
     db.user.update(
         {photoUrl: req.body.photoUrl},

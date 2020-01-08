@@ -15,13 +15,14 @@ h1, h2, h3 {
     font-family: 'Permanent Marker', cursive;
 }
 footer {
-    min-height: 10vh;
+    height: 10vh;
     width: 100vw;
     bottom: 0;
     display: flex;
     position: fixed;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
 }
 #map {
     position: center; 
@@ -56,6 +57,7 @@ footer {
 #memory-image {
     height: 250px;
     width: 250px;
+    border: 5px solid black;
 }
 #toast-container {
     left: 40% !important;

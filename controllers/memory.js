@@ -60,6 +60,7 @@ router.get('/:id', isLoggedIn, (req, res) => {
     })
 })
 
+// Route to add a picture to a memory and update the place table
 router.put('/:id', isLoggedIn, (req, res) => {
     console.log(req.params, `This should be 6 or some shit like that`)
     console.log(`inside the image put route, ${req.params.id}`)
