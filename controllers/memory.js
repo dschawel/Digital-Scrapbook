@@ -7,7 +7,7 @@ let mbxGeocode = require('@mapbox/mapbox-sdk/services/geocoding')
 let multer = require('multer')
 let upload = multer({ dest: './uploads/' })
 
-const mb = mbxClient({ accessToken: 'pk.eyJ1IjoiZHNjaGF3ZWwiLCJhIjoiY2s0YWl3ankwMDRkaTNucnVqZGtvNWVrbCJ9._FgRj_tMA-T2lGsQq-nZRA'})
+const mb = mbxClient({ accessToken: process.env.MAPBOX_API})
 const geocode = mbxGeocode(mb)
 
 // Route to view memories
@@ -46,17 +46,26 @@ router.get('/:id', isLoggedIn, (req, res) => {
         }
     })
     .then((place) => {
-    //     // geocode.forwardGeocode({
-    //     // g : `${place}`
-    //     // })
-    //     // .send()
-    //     console.log(place)
-        res.render('memories/show', { place, mapkey: process.env.MAPBOX_API  })
-    //     JSON.stringify(place)
-    })
-    .catch(err => {
-        console.log('error', err)
-        res.redirect('error')
+        geocode.forwardGeocode({
+        query : `${place.city}, ${place.state}, ${place.country}`,
+        types: ['place'],
+        countries: ['us']
+        })
+        .send()
+        .then(result => {
+            console.log(place.city, place.state, place.country)
+            console.log(result.body.features[0].center)
+            let results = {
+                lat: result.body.features[0].center[1],
+                long: result.body.features[0].center[0]
+            }
+            console.log(results)
+            res.render('memories/show', { place, mapkey: process.env.MAPBOX_API, results })
+        })
+        .catch(err => {
+            console.log('error', err)
+            res.redirect('error')
+        })
     })
 })
 
@@ -67,11 +76,11 @@ router.put('/:id', isLoggedIn, (req, res) => {
         {where: { id: req.params.id }}
     )
     .then(() => {
-        console.log('SUCCESS')
+        // console.log('SUCCESS')
         res.send({'message': 'success'})
     })
     .catch(err => {
-        console.log('Error', err)
+        // console.log('Error', err)
         res.send({'message': 'error'})
     })
 })

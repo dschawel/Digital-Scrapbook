@@ -73,3 +73,9 @@ footer {
 #place-id {
     display: none;
 }
+#lat {
+    display: none;
+}
+#long {
+    display: none;
+}
