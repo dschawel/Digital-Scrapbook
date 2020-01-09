@@ -112,4 +112,20 @@ router.post('/', isLoggedIn, (req, res) => {
     })
 })
 
+// Route to delete a memory by id
+router.delete('/:id', (req, res) => {
+    db.place.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+    .then((place) => {
+        res.redirect('/memory')
+    })
+    .catch(err => {
+        console.log('error', err)
+        res.render('error') 
+    })
+})
+
 module.exports = router 

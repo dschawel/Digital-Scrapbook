@@ -19,6 +19,7 @@ app.use('/', express.static('static'))
 app.use(express.urlencoded({ extended: false }))
 // Needed this to parse json info
 app.use(express.json())
+app.use(methodOverride('_method'))
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,

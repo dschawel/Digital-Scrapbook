@@ -13,8 +13,11 @@
     
     <div class="row">
         <div class="col s4">
+            <form action="/memory/<%=place.id%>/?_method=DELETE" method="POST">
             <img class="responsive-img" alt="memory-image" id="memory-image" src="<%= place.imgUrl %>">
             <button id="upload_widget" class="cloudinary-button">Upload A Picture</button>
+            <input type="submit" value="Delete Memory">
+            </form>
         </div> 
 
         <div class="col s8">
