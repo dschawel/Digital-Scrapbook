@@ -46,12 +46,12 @@ footer {
     top: 0; 
     bottom: 0; 
     left: 22%;
-    height: 35vh;
-    width: 35vw;
+    height: 45vh;
+    width: 45vw;
 } 
 .map-container {
-    height: 35vh;
-    width: 35vw;
+    height: 45vh;
+    width: 45vw;
     border: 5px solid black;
 }
 #info {
@@ -79,6 +79,7 @@ footer {
     border-radius: 50%;
 }
 #memory-image {
+    align-items: center;
     height: 275px;
     width: 275px;
     border: 5px solid black;
