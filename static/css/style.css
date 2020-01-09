@@ -76,15 +76,15 @@ footer {
     padding-left: 10px;
 }
 #user-image {
-    height: 300px;
-    width: 300px;
+    /* height: 300px;
+    width: 300px; */
     border: 5px solid black;
     border-radius: 50%;
 }
 #memory-image {
     align-items: center;
-    height: 275px;
-    width: 275px;
+    height: 35vh;
+    width: 30vw; 
     border: 5px solid black;
 }
 #delete {
