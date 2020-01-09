@@ -43,7 +43,7 @@ app.use('/memory', require('./controllers/memory'))
 
 // Add home or catch-all routes
 app.get('/', (req, res) => {
-    res.render('Home', { mapkey: process.env.MAPBOX_API })
+    res.render('home', { mapkey: process.env.MAPBOX_API })
 })
 
 // error always goes on bottom
