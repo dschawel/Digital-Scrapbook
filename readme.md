@@ -1,6 +1,8 @@
 # Digital Scrapbook
 
-## Instructions 
+## User Stories
+
+## Summary 
 
 ### User Model
 
@@ -18,7 +20,7 @@
 | admin | Boolean | Defaults to false |
 | birthday | Date | - |
 
-### Default Routes
+### Routes
 
 | Method | Path | Location | Purpose |
 | ------ | ---------------- | ----------| ------------------ |
