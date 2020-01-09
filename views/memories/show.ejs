@@ -7,8 +7,8 @@
         <p><strong><%= place.city %>, <%= place.state %>, <%= place.country %></strong></p>
         <p><strong><%= place.description %></strong></p>
         <!--Passing the lat and long coordinates to the front end.-->
-        <p id="lat"><%= results.lat %></p>
-        <p id="long"><%= results.long %></p>
+        <p id="lat" name="lat"><%= results.lat %></p>
+        <p id="long" name="long"><%= results.long %></p>
     </div>
     
     <div class="row">
@@ -22,6 +22,9 @@
 
         <div class="col s8">
             <div id="map" class="map-container"></div>
+            <form action="/memory/<%=place.id%>?_method=PUT" method="POST">
+                <input type="submit" id="update" value="Update Coordinates">
+            </form>
         </div>
     </div>
 

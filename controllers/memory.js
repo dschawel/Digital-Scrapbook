@@ -75,20 +75,74 @@ router.get('/:id', isLoggedIn, (req, res) => {
 })
 
 // Route to add a picture to a memory and update the place table
+// router.put('/:id', isLoggedIn, (req, res) => {
+//     db.place.update(
+//         {imgUrl: req.body.imgUrl},
+//         {where: { id: req.params.id }}
+//     )
+//     .then(() => {
+//         // console.log('SUCCESS')
+//         console.log(req.body.lat)
+//         console.log(req.body.long)
+//         res.send({'message': 'success'})
+//     })
+//     .catch(err => {
+//         console.log('error', err)
+//         res.redirect('error')
+//     })
+// })
+
 router.put('/:id', isLoggedIn, (req, res) => {
-    db.place.update(
-        {imgUrl: req.body.imgUrl},
-        {where: { id: req.params.id }}
-    )
-    .then(() => {
-        // console.log('SUCCESS')
-        res.send({'message': 'success'})
-    })
-    .catch(err => {
-        console.log('error', err)
-        res.redirect('error')
-    })
-})
+    if (req.body.imgUrl && !req.body.lat && !req.body.long) {
+        db.place.update(
+            {imgUrl: req.body.imgUrl},
+            {where: { id: req.params.id }}
+            .then((place) => {
+                res.render('memories/show', { place })
+            })
+            .catch(err => {
+                console.log('error', err)
+                res.redirect('error')
+            })
+        )} else if (!req.body.imgUrl && req.body.lat && req.body.long) {
+            db.place.update({
+                latitude: result.lat,
+                longitude: result.long,
+                where: {
+                    id: req.params.id
+                }
+                .then((place) => {
+                    res.render('memories/show', { place })
+                })
+                .catch(err => {
+                    console.log('error', err)
+                    res.redirect('error')
+                })
+            })
+        } else if (req.body.imgUrl && req.body.lat && req.body.long) {
+            db.place.update({
+                imgURL: req.body.imgUrl,
+                latitude: req.body.lat,
+                longitude: req.body.long,
+                    where: {
+                        id: req.params.id
+                    }
+                    .then((place) => {
+                        res.render('memories/show', { place })
+                    })
+                    .catch(err => {
+                        console.log('error', err)
+                        res.redirect('error')
+                    })
+                })
+            } else {
+                console.log(req.body.lat, req.body.long)
+                res.render('memories/show')
+            }
+        })
+        
+        
+
 
 
 // Route to create and post a memory
