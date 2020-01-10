@@ -4,6 +4,27 @@
 I want a user to be able to log in and be able to create a memory and upload a picture for that memory.  They will also be able to see a map of where that memory happened.  A user will also be able to see a list of all their memories.
 
 ## Summary 
+I have a scrapbook of all the places that I have traveled to with bits of paper glued in.  After a while they get big and the binding breaks, so I created this app as a digital form of the paper version.  I also wanted it to be more private so you don't have to post it to sites like Facebook.
+
+## Dependencies
+* Mapbox/mapbox-sdk
+* Axios
+* Bcryptjs
+* Cloudinary
+* Connect-flash
+* Dotenv
+* Ejs
+* Express
+* Express-ejs-layouts
+* Express-session
+* Mapbox
+* Method-override
+* Multer
+* Passport
+* Passport-local
+* Pg
+* Sequelize
+* Sequelize-cli
 
 ### User Model
 
