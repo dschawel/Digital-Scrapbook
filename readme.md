@@ -1,12 +1,13 @@
 # Digital Scrapbook
 
 ## User Stories
+I want a user to be able to log in and be able to create a memory and upload a picture for that memory.  They will also be able to see a map of where that memory happened.  A user will also be able to see a list of all their memories.
 
 ## Summary 
 
 ### User Model
 
-| Column Name | Data Type | Notes|
+| Column Name | Data Type | Notes |
 |---------------- | --------------- | ------------------ |
 | id | Integer | Serial Primary Key |
 | createdAt | Date | Auto-generated |
@@ -19,6 +20,23 @@
 | photoUrl | String | Profile Pic |
 | admin | Boolean | Defaults to false |
 | birthday | Date | - |
+
+### Place Model
+| Column Name | Data Type | Notes |
+| ------------- | ----------- | ---------- |
+| id | Integer | Serial Primary Key |
+| createdAt | Date | Auto-generated |
+| updatedAt | Date | Auto-generated |
+| name | String | - |
+| userId | Integer | Foreign Primary Key |
+| date | Date | - |
+| city | String | - |
+| state | String | - |
+| country | String | - | 
+| latitude | Integer | - |
+| longitude | Integer | - |
+| description | Text | Description for the memory |
+| imgUrl | String | Picture for the memory |
 
 ### Routes
 
