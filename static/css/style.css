@@ -8,10 +8,11 @@ html, body {
     justify-content: center;
     align-items: center;
 } */
+
 main {
     text-align: center;
 }
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
     font-family: 'Permanent Marker', cursive, sans-serif;
 }
 tbody {
@@ -72,7 +73,7 @@ footer {
 }
 #delete {
     background-color: red;
-    height: 50px;
+    height: 1.75em;
     border-radius: 5px;
 }
 #toast-container {
