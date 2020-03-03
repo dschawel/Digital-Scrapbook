@@ -1,6 +1,6 @@
-<nav class="blue accent-2">
+<!-- <nav class="blue accent-2">
     <div class="nav-wrapper">
-        <a href="/" id="logo" class="brand-logo black-text">Digital Scrapbook</a>
+        <a href="/" id="logo">Digital Scrapbook</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <% if (!user) { %>
             <li><a href="/">Home</a></li>
@@ -19,4 +19,53 @@
             <% } %>
         </ul>
     </div>
+</nav> -->
+
+<nav class="navbar-fixed blue accent-2">
+    <div class="nav-wrapper">
+        <a href="#!" id="logo">Digital Scrapbook</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+            <% if (!user) { %>
+            <li><a href="/">Home</a></li>
+            <li><a href="/auth/login">Login</a></li>
+            <li><a href="/auth/signup">Signup</a></li>
+            <% } else { %>
+                <li>Hi, <%= user.firstname %>!</li>
+                <li><a href="/">Home</a></li>
+                <% if (user.admin) { %>
+                    <li><a href="/profile/admin">Admin</a></li>
+                <% } %>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/memory">Memories</a></li>
+                <li><a href="/memory/new">Create A Memory</a></li>
+                <li><a href="/auth/logout">Logout</a></li>
+                <% } %>
+        </ul>
+    </div>
 </nav>
+
+<ul class="sidenav" id="mobile-demo">
+    <% if (!user) { %>
+        <li><a href="/">Home</a></li>
+        <li><a href="/auth/login">Login</a></li>
+        <li><a href="/auth/signup">Signup</a></li>
+        <% } else { %>
+            <li>Hi, <%= user.firstname %>!</li>
+            <li><a href="/">Home</a></li>
+            <% if (user.admin) { %>
+                <li><a href="/profile/admin">Admin</a></li>
+            <% } %>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/memory">Memories</a></li>
+            <li><a href="/memory/new">Create A Memory</a></li>
+            <li><a href="/auth/logout">Logout</a></li>
+            <% } %>
+</ul>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems);
+    });
+</script>

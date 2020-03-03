@@ -2,12 +2,12 @@ html, body {
     margin: 0;
     padding: 0;
 }
-body {
+/* body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+} */
 main {
     text-align: center;
 }
@@ -42,20 +42,22 @@ footer {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-}
+} 
 #map {
     position: center; 
     justify-content: center;
+    align-self: center;
     top: 0; 
     bottom: 0; 
-    left: 18%;
+    margin: 0 auto;
+    /* left: 18%; */
     height: 45vh;
     width: 45vw;
 } 
 .map-container {
     height: 45vh;
     width: 45vw;
-    border: 5px solid black;
+    border: .25em solid black;
 }
 #info {
     display: flex; 
@@ -73,7 +75,8 @@ footer {
 }
 #logo {
     font-family: 'Permanent Marker', cursive, sans-serif;
-    padding-left: 10px;
+    color: black;
+    padding-left: 2em;
 }
 #user-image {
     height: 35vh;
