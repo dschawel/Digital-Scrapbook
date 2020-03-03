@@ -27,11 +27,12 @@ thead, tbody tr {
 }
 thead {
     font-family: 'Permanent Marker', cursive, sans-serif;
-    font-size: 20px;
+    font-size: .75em;
     width: calc( 100% - 1em );
 }
 table {
-    width: 75vw;
+    width: 100%;
+    margin: 0 auto;
 }
 footer {
     height: 7vh;
@@ -47,10 +48,7 @@ footer {
     position: center; 
     justify-content: center;
     align-self: center;
-    /* top: 0; 
-    bottom: 0;  */
     margin: 0 auto;
-    /* left: 18%; */
     height: 45vh;
     width: 45vw;
 } 
@@ -59,35 +57,17 @@ footer {
     width: 45vw;
     border: .25em solid black;
 }
-#info {
-    display: flex; 
-    position: relative;
-    left: 7%;
-    margin: 0px auto;
-    width: 50%;
-    /* padding: 10px; */
-    border: none;
-    border-radius: 3px;
-    font-size: 12px;
-    text-align: center;
-    color: #222;
-    background: #fff;
-}
 #logo {
     font-family: 'Permanent Marker', cursive, sans-serif;
     color: black;
     padding-left: 2em;
 }
 #user-image {
-    height: 35vh;
-    width: 35vh;
     border: 5px solid black;
     border-radius: 50%;
 }
 #memory-image {
-    align-items: center;
-    height: 35vh;
-    width: 30vw; 
+    align-items: center;  
     border: 5px solid black;
 }
 #delete {
